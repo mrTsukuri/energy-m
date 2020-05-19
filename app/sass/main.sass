@@ -1,0 +1,776 @@
+body
+    font-size: 14px
+    line-height: 17px
+    font-family: 'Proxima Nova Rg'
+    color: #252525
+    button
+        outline: none
+.container
+    max-width: 1210px
+    margin: 0 auto
+.header
+    
+    &-top
+        display: flex 
+        justify-content: space-between
+        align-items: center
+        margin-top: 18px
+        &:last-of-type
+            display: none
+    &-logo  
+        display: flex
+        flex-direction: column
+        align-items: start 
+        text-decoration: none
+        color: #252525
+        font-family: 'Proxima Nova Lt'
+        font-size: 13px
+        font-weight: 600
+    &-city
+        display: flex
+        flex-direction: column 
+    &-search
+        width: 255px
+        height: 50px
+        position: relative
+        & form
+            position: absolute
+            width: 100%
+            & input[type='text']
+                width: 100%
+                position: absolute
+                font-family: 'Proxima Nova Rg'
+                opacity: 0.5
+                padding: 17px 0 17px 19px
+                border: 2px solid #F4F4F4
+                box-sizing: border-box
+            & input[type='submit']
+                position: absolute
+                border: 0
+                width: 14px
+                height: 14px
+                right: 20px
+                top: 20px
+                background: url(../img/search.svg) center no-repeat
+    &-phone
+        display: flex
+        
+        & img
+            margin-right: 10px
+            align-self: center
+        & div
+            display: flex
+            flex-direction: column 
+            & h3
+                margin: 0
+                font-size: 16px
+            & span
+                opacity: 0.5
+            & a 
+                color: #F23D18
+                font-size: 12px
+                font-family: 'Roboto', sans-serif
+                border-bottom: 1px dashed #F23D18
+                text-decoration: none
+                width: 103px 
+    &-basket
+        display: flex
+        flex-direction: column
+        text-decoration: none
+        & img
+            margin: 0 auto
+        & span
+            font-family: 'Proxima Nova Lt'
+            font-weight: 600
+            color: #252525
+            margin-top: 11px
+    &-navigation
+        margin-top: 20px
+        display: flex
+        & .popBtn
+            font-size: 16px
+            color: #fff
+            background: linear-gradient(161.94deg, #E62817 0%, #F26118 100%)
+            border: none
+            font-family: 'Proxima Nova Rg'
+            position: relative
+            padding: 20px 70px 20px 50px
+            flex-grow: 0
+            cursor: pointer
+            transition: 0.2s
+            &:hover
+                box-shadow: 0 0 6px #252525 inset
+            & span
+                position: absolute
+                display: block
+                background: #fff
+                width: 5px
+                height: 1px
+                top: 50%
+                &:first-child
+                    transform: rotate(45deg)
+                    right: 50px
+                &:last-child
+                    transform: rotate(-45deg)
+                    right: 47px
+        & ul
+            display: flex
+            list-style: none
+            align-items: center
+            border: 2px solid #F23D18
+            flex-grow: 1
+            margin: 0
+            padding-left: 25px
+            flex-wrap: wrap
+            & li
+                margin-right: 30px
+            & a
+                font-family: 'Proxima Nova Lt'
+                font-weight: 600 
+                text-decoration: none
+                color: #252525
+                transition: 0.2s
+                &:hover
+                    color: #F23D18
+            & li:nth-child(5) a
+                position: relative
+                margin-right: 40px
+                &:hover > span
+                    background: #F23D18
+                & span 
+                    position: absolute
+                    display: block
+                    background: #252525
+                    width: 5px
+                    height: 1px
+                    top: 52%
+                    transition: 0.2s
+                    &:first-child
+                        transform: rotate(45deg)
+                        right: -10px
+                    &:last-child
+                        transform: rotate(-45deg)
+                        right: -13px
+.main
+    &-breadcrumbs
+        display: flex
+        justify-content: space-between
+    &-bread
+        list-style: none
+        margin: 25px 0
+        padding: 0
+        & li
+            display: inline
+            font-size: 12px
+            margin-right: 26px
+            & a
+                text-decoration: none
+                color: #252525
+                position: relative
+                &:hover
+                    color: #F23D18
+                &:hover > span
+                    background: #F23D18    
+                & span
+                    position: absolute
+                    display: block
+                    background: #252525
+                    width: 5px
+                    height: 1px
+                    right: -10px
+                    transition: 0.2s
+                    opacity: 0.2
+                    &:first-child
+                        transform: rotate(45deg)
+                        top: 5px
+                    &:last-child
+                        transform: rotate(-45deg)
+                        top: 8px
+    &-social
+        list-style: none
+        margin: 25px 0
+        padding: 0
+        & li
+            display: inline
+            & a
+                text-decoration: none 
+            & img
+                width: 24px 
+    &-product
+        display: flex
+        &-left
+            display: flex
+            flex-direction: column
+            margin-right: 30px
+            &-photoBlock
+                display: flex
+                width: 490px
+                border: 2px solid #F4F4F4
+                padding: 15px 0
+                box-sizing: border-box 
+                & div
+                    width: 62px
+                    height: 17px
+                    padding: 4px 5px
+                    background: linear-gradient(111.64deg, #E62817 0%, #F26118 100%)
+                    color: #fff
+                    position: relative
+                    &:before
+                        content: ''
+                        position: absolute
+                        top: -2px
+                        right: -1px
+                        border: 15px solid transparent
+                        border-right: 13px solid white
+            &-photos
+                display: flex
+                margin-top: 20px
+                & img
+                    margin-right: 20px
+                & div
+                    display: flex 
+                    flex-direction: column
+                    & button
+                        border: none
+                        background: none
+                        position: relative
+                        padding: 0
+                        width: 54px
+                        height: 10px
+                        & span
+                            position: absolute
+                            display: block 
+                            width: 7px
+                            height: 2px
+                        & span:first-child
+                            transform: rotate(45deg) 
+                        & span:last-child
+                            transform: rotate(-45deg)       
+                        & span:nth-child(2)
+                            display: block
+                            width: 100%
+                            height: 2px
+                            top: 0
+                &_leftBtn        
+                    margin-bottom: 30px
+                    margin-top: 14px
+                    cursor: pointer
+                    & span
+                        background: #F23D18
+                    & span:first-child
+                        top: -2px
+                        right: -1px
+                    & span:last-child
+                        top: 2px
+                        right: -1px
+                &_rightBtn
+                    & span
+                        background: #252525
+                        opacity: 0.5
+                    & span:first-child
+                        top: 2px
+                        left: -1px
+                    & span:last-child
+                        top: -2px
+                        left: -1px 
+            &-thumbs
+                display: flex
+                margin-top: 20px
+                & a
+                    display: flex
+                    align-items: center
+                    text-decoration: none
+                    color: #252525
+                    padding: 13px 30px
+                    width: 150px
+                    box-sizing: border-box
+                    border: 2px solid #f4f4f4
+                    margin-right: 20px
+                    font-family: 'Proxima Nova Lt'
+                    font-weight: 600
+                    font-size: 12px
+                    transition: 0.2s
+                    &:hover
+                        border-color: #F23D18
+                    &:last-child
+                        margin-right: 0    
+                    & img
+                        margin-right: 10px
+            &-power
+                margin-top: 20px
+                & a
+                    display: flex
+                    align-items: center
+                    text-decoration: none
+                    color: #252525
+                    padding: 21px 110px 21px 22px
+                    width: 490px
+                    background: url(../img/power.png) no-repeat
+                    background-position: 397px 0
+                    box-sizing: border-box
+                    border: 2px solid #f4f4f4
+                    font-family: 'Proxima Nova Th'
+                    font-weight: 800
+                    transition: 0.2s
+                    &:hover
+                        border-color: #F23D18
+            &-productSelection
+                margin-top: 20px
+                border: 2px solid #F23D18
+                width: 490px
+                button
+                    font-family: 'Proxima Nova Th'      
+                    font-weight: 800 
+                    font-size: 16px
+                    text-align: start
+                    width: 100%
+                    box-sizing: border-box
+                    background: #f4f4f4
+                    border: none
+                    padding: 18px 20px 
+                    cursor: pointer
+                    position: relative
+                    transition: 0.2s easy
+                      
+                    & .btnArrow span
+                        position: absolute
+                        display: block
+                        background: #252525
+                        width: 9px
+                        height: 2px
+                        top: 50%
+                        transition: 0.2s
+                        &:first-child
+                            transform: rotate(45deg)
+                            right: 25px
+                        &:last-child
+                            transform: rotate(-45deg)
+                            right: 20px    
+                & select
+                    border: none
+                &_selections
+                    display: none
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.2s ease-out;
+                    flex-wrap: wrap
+                    align-items: center
+                    & div
+                        margin-top: 20px
+                        margin-left: 25px
+                        & label
+                            font-family: 'Proxima Nova Th'      
+                            font-weight: 800
+                    & button
+                        background: #F23D18
+                        color: #fff
+                        text-align: center
+                        padding: 13px 0
+                        margin-top: 15px   
+        &-right
+            display: flex
+            flex-direction: column
+            &_productName
+                margin: 0
+                font-family: 'Proxima Nova Th'      
+                font-weight: 800
+                font-size: 24px
+                text-transform: uppercase
+                margin-bottom: 40px
+            &-inStock
+                display: flex
+                flex-wrap: wrap
+                margin-bottom: 40px
+                & div
+                    display: flex
+                    margin-right: 20px
+                    margin-bottom: 10px
+                    & p
+                        margin: 0
+                    & img
+                        margin-right: 7px
+                        align-self: center                      
+            &-buyBtns
+                display: flex
+                margin-bottom: 40px
+                flex-wrap: wrap
+                &:last-child
+                    margin-bottom: 40px
+                &_price
+                    display: flex
+                    & div
+                        display: flex
+                        flex-direction: column
+                        padding: 10px 20px
+                        background: #f4f4f4
+                        & span:first-child
+                            font-size: 12px
+                            font-weight: 600
+                            font-family: 'Proxima Nova Lt'
+                            opacity: 0.5
+                        & span:last-child
+                            font-size: 24px
+                            font-family: 'Proxima Nova Bl'
+                            font-weight: 900
+                & button
+                    background: linear-gradient(140.19deg, #E62817 0%, #F26118 100%)
+                    padding: 16px 20px
+                    border: none
+                    cursor: pointer
+                    transition: 0.2s
+                    &:hover
+                        box-shadow: 0 0 5px #252525 inset
+                &_price.kit
+                    
+                    margin: 0 20px 
+                    & div
+                        border: 2px solid #f4f4f4
+                        border-right: none
+                        background: #ffffff
+                        padding: 8px 18px
+                        & span:last-child
+                            color: #F23D18
+                    & div:nth-child(2)
+                        border: none
+                        background: #f4f4f4
+                        padding: 14px 19px
+                        position: relative
+                        & a
+                            color: #252525
+                            font-family: 'Proxima Nova Lt'      
+                            font-weight: 600
+                        &:before
+                            content: ''
+                            position: absolute
+                            left: 0px
+                            top: 0px
+                            border: 30px solid transparent
+                            border-left: 10px solid white    
+                & .optionBtn
+                    padding: 15px 24px
+                    background: #ffffff
+                    border: 2px solid #f4f4f4
+                    
+                & .buyBtn
+                    background: linear-gradient(168.69deg, #E62817 0%, #F26118 100%)
+                    color: #ffffff
+                    font-weight: 800
+                    padding: 18px 20px
+                    font-family: 'Proxima Nova Th'
+                    font-size: 14px
+                & .commercialBtn
+                    color: #252525
+                    background: #ffffff
+                    border: 2px solid #f4f4f4
+                    display: flex
+                    align-items: center
+                    text-align: start
+                    padding: 8px 20px
+                    font-size: 12px
+                    margin-left: 20px
+                    &:first-child
+                        margin-left: 0
+                    & img
+                        margin-right: 10px
+                &_price.leasing
+                    margin-left: 20px
+                    & div
+                        & span
+                             font-family: 'Proxima Nova Th'
+                             font-weight: 800
+                             font-size: 14px
+                             opacity: 1
+                    & .commercialBtn.buyBtn
+                        margin-left: 0
+                        position: relative
+                        &:before
+                            content: ''
+                            position: absolute
+                            left: 0
+                            top: 0
+                            border: 26px solid transparent
+                            border-left: 10px solid #f4f4f4                   
+            &_description
+                line-height: 179%
+                margin: 0
+                margin-bottom: 40px
+            &-documentLinks
+                max-width: 680px
+                &-mainLinks
+                    display: flex
+                    padding: 14px 20px
+                    background: #f4f4f4
+                    position: relative
+                    &::before
+                        position: absolute
+                        content: ''
+                        top: 0
+                        right: 0
+                        border: 34px solid transparent
+                        border-right: 20px solid #ffffff
+                    & a
+                        font-family: 'Proxima Nova Lt'
+                        font-weight: 600
+                        color: #252525
+                        text-decoration: none
+                        display: flex
+                        align-items: center
+                        margin-right: 40px
+                        transition: 0.2s
+                        & img
+                            margin-right: 9px
+                        &:hover
+                            color: #F23D18 
+                &-secondLinks
+                    height: 250px
+                    border: 2px solid #f4f4f4
+                    padding: 20px 22px 20px 60px
+                    box-sizing: border-box
+                    & ul
+                        list-style: none
+                        margin: 0
+                        padding: 0
+                        & li
+                            margin-bottom: 8px
+                            position: relative
+                            &::before
+                                position: absolute
+                                content: ''
+                                width: 25px
+                                height: 2px
+                                background: #252525
+                                left: -40px
+                                top: 50%
+                            & a
+                                font-family: 'Roboto', sans-serif
+                                text-decoration: none
+                                color: #252525
+                                border-bottom: 1px dashed #252525
+                                line-height: 24px
+                                transition: 0.2s
+                                &:hover
+                                    color: #F23D18
+                                    border-bottom: 1px dashed #F23D18
+    
+    .simplebar-track
+        margin: 20px 20px 20px 0
+    .simplebar-track.simplebar-vertical
+        background: rgba(37, 37, 37, 0.1)
+        width: 4px   
+    .simplebar-scrollbar::before
+        background: #F23D18
+        border-radius: 0
+        left: 0
+        width: 4px
+.modal
+    display: none
+    width: 100%
+    height: 100%
+    background: rgba(68, 68, 68, 0.5)
+    position: fixed
+    left: 0
+    top: 0
+    &-content
+        position: absolute
+        width: 490px
+        padding: 30px 40px 
+        display: flex
+        flex-direction: column
+        z-index: 10
+        background: #ffffff
+        left: 746px
+        top: 111px
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+    &_name
+        font-family: 'Proxima Nova Th'
+        font-weight: 800 
+        font-size: 24px
+        margin: 0
+        margin-bottom: 30px
+    &-product
+        display: flex    
+    &-img
+        padding: 20px 14px
+        border: 2px solid #f4f4f4
+        margin-right: 20px 
+    &-countBtn
+        display: flex
+        margin-bottom: 16px
+        button
+            border: none
+            background: #f4f4f4
+            width: 30px
+            height: 40px 
+            position: relative    
+            &::before
+                position: absolute
+                content: ''
+                top: 19px
+                left: 10px
+                width: 10px
+                height: 2px
+                background: #252525
+        button:last-of-type
+            &::after
+                position: absolute
+                content: ''
+                top: 15px
+                left: 14px
+                width: 2px
+                height: 10px
+                background: #252525        
+        span
+            background: #f4f4f4
+            width: 20px
+            height: 40px
+            padding-top: 13px
+            text-align: center
+            box-sizing: border-box
+            font-family: 'Roboto', sans-serif
+    &-check
+        display: block
+        position: relative
+        font-family: 'Proxima Nova Th'
+        font-weight: 800
+        padding-left: 30px
+        margin-bottom: 25px
+        input
+            position: absolute
+            opacity: 0
+            cursor: pointer
+            height: 0
+            width: 0
+    &-check input:checked ~ &-checkmark::after
+        display: block
+    &-check &-checkmark::after
+        width: 12px
+        height: 12px
+        background: #f23d18
+        top: 4px
+        left: 4px                   
+    &-checkmark
+        position: absolute
+        top: -3px
+        left: 0
+        height: 20px
+        width: 20px
+        border: 2px solid #f4f4f4
+        &::after
+            content: ''
+            position: absolute
+            display: none
+    &-price
+        display: flex
+        flex-direction: column
+        span:first-child
+            font-size: 12px
+            font-weight: 600
+            font-family: 'Proxima Nova Lt'
+            opacity: 0.5 
+            margin-bottom: 7px
+        span:last-child
+            font-size: 24px
+            font-family: 'Proxima Nova Bl'
+            font-weight: 900
+    &-phone
+        margin-top: 30px
+        display: flex
+        input[type='phone']
+            border: 2px solid #F4F4F4
+            border-right: none
+            font-weight: 600
+            font-family: 'Proxima Nova Lt'
+            font-size: 14px
+            padding: 20px 180px 20px 20px
+        button
+            background: #F23D18
+            border: none
+            padding: 0 15px    
+
+#buyBtn
+    position: relative        
+@media screen and ( max-width: 1220px )
+    .optionBtn
+        margin-top: 40px
+@media screen and ( max-width: 1100px )
+    .container
+        width: 680px
+        padding: 0 20px
+        
+    .header
+        &-top
+            justify-content: space-around
+            &:last-of-type
+                display: flex
+                .header-city
+                    display: flex
+                .header-phone
+                    display: flex    
+        &-city
+            display: none 
+        &-phone
+            display: none
+    .main-product
+        flex-direction: column
+        &-left
+            margin: 0 auto
+            margin-bottom: 40px
+        &-right
+            margin: 0 auto
+            &_productName
+                text-align: center
+            &-inStock
+                justify-content: center
+            &-buyBtns
+                justify-content: center
+                .optionBtn
+                    margin-top: 0
+                    margin-left: 20px
+                &_price.kit
+                    order: 1 
+                    margin-top: 20px
+                              
+
+                   
+
+    
+        
+        
+                                                 
+    
+
+
+
+
+
+
+                         
+                
+                        
+                    
+                
+
+
+                     
+
+
+
+                    
+                            
+
+                    
+                            
+
+
+                    
+                    
+
+                    
+
+
+
+                  
+
+
