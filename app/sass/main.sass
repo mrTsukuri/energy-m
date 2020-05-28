@@ -155,6 +155,9 @@ body
     &-breadcrumbs
         display: flex
         justify-content: space-between
+        .ya-share2
+            display: flex
+            align-items: center
     &-bread
         list-style: none
         margin: 25px 0
@@ -186,16 +189,7 @@ body
                     &:last-child
                         transform: rotate(-45deg)
                         top: 8px
-    &-social
-        list-style: none
-        margin: 25px 0
-        padding: 0
-        & li
-            display: inline
-            & a
-                text-decoration: none 
-            & img
-                width: 24px 
+     
     &-product
         display: flex
         &-left
@@ -254,7 +248,7 @@ body
                             top: 0
                 &_leftBtn        
                     margin-bottom: 30px
-                    margin-top: 14px
+                    margin-top: 30px
                     cursor: pointer
                     & span
                         background: #F23D18
@@ -266,14 +260,17 @@ body
                         right: -1px
                 &_rightBtn
                     & span
-                        background: #252525
-                        opacity: 0.5
+                        background: #F23D18
                     & span:first-child
                         top: 2px
                         left: -1px
                     & span:last-child
                         top: -2px
-                        left: -1px 
+                        left: -1px
+                &_rightBtn.swiper-button-disabled
+                    & span
+                        background: #252525
+                        opacity: 0.5       
             &-thumbs
                 display: flex
                 margin-top: 20px
