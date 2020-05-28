@@ -83,7 +83,10 @@ gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
       .pipe(gulp.dest('dest/fonts'));
 
     const buildLibs = gulp.src('app/libs/**/*')
-	   .pipe(gulp.dest('dest/libs'));    
+	   .pipe(gulp.dest('dest/libs'));  
+	
+	const buildPlugin = gulp.src('app/plugin/**/*')
+		.pipe(gulp.dest('dest/plugin'));   
 
     const buildJs = gulp.src('app/js/**/*')
       .pipe(gulp.dest('dest/js'));

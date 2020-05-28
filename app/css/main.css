@@ -274,7 +274,8 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-right: 30px; }
+    margin-right: 30px;
+    width: 40%; }
     .main-product-left-photoBlock {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -284,14 +285,14 @@ body {
       padding: 15px 0;
       -webkit-box-sizing: border-box;
               box-sizing: border-box; }
-      .main-product-left-photoBlock div {
+      .main-product-left-photoBlock_leasing {
         width: 62px;
         height: 17px;
         padding: 4px 5px;
         background: linear-gradient(111.64deg, #E62817 0%, #F26118 100%);
         color: #fff;
         position: relative; }
-        .main-product-left-photoBlock div:before {
+        .main-product-left-photoBlock_leasing:before {
           content: '';
           position: absolute;
           top: -2px;
@@ -305,7 +306,7 @@ body {
       margin-top: 20px; }
       .main-product-left-photos img {
         margin-right: 20px; }
-      .main-product-left-photos div {
+      .main-product-left-photos-btns {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -313,25 +314,25 @@ body {
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column; }
-        .main-product-left-photos div button {
+        .main-product-left-photos-btns button {
           border: none;
           background: none;
           position: relative;
           padding: 0;
           width: 54px;
           height: 10px; }
-          .main-product-left-photos div button span {
+          .main-product-left-photos-btns button span {
             position: absolute;
             display: block;
             width: 7px;
             height: 2px; }
-          .main-product-left-photos div button span:first-child {
+          .main-product-left-photos-btns button span:first-child {
             -webkit-transform: rotate(45deg);
                     transform: rotate(45deg); }
-          .main-product-left-photos div button span:last-child {
+          .main-product-left-photos-btns button span:last-child {
             -webkit-transform: rotate(-45deg);
                     transform: rotate(-45deg); }
-          .main-product-left-photos div button span:nth-child(2) {
+          .main-product-left-photos-btns button span:nth-child(2) {
             display: block;
             width: 100%;
             height: 2px;
@@ -705,7 +706,6 @@ body {
   width: 4px; }
 
 .modal {
-  display: none;
   width: 100%;
   height: 100%;
   background: rgba(68, 68, 68, 0.5);
@@ -850,6 +850,15 @@ body {
 
 #buyBtn {
   position: relative; }
+
+.gallery-thumbs .swiper-wrapper {
+  width: 340px; }
+
+.gallery-thumbs .swiper-slide {
+  width: 25%; }
+
+.gallery-top {
+  width: 95%; }
 
 @media screen and (max-width: 1220px) {
   .optionBtn {

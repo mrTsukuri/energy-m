@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="fonts/fonts.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="plugin/fancybox/dist/jquery.fancybox.min.css" />
+    <script src="plugin/fancybox/dist/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="plugin/noty/lib/noty.css">
+    <script src="plugin/noty/lib/noty.js"></script>
+    <link rel="stylesheet" href="plugin/swiper/css/swiper.css">
+    <link rel="stylesheet" href="plugin/noty/lib/themes/sunset.css">
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
     <title>Энергия-М</title>
 </head>
 <body>
@@ -108,14 +116,26 @@
             <section class="main-product">
                 <div class="main-product-left">
                     <div class="main-product-left-photoBlock">
-                        <div>Лизинг</div>
-                        <img src="img/boiler.png" alt="">
-                    </div>
+                        <div class="main-product-left-photoBlock_leasing">Лизинг</div>
+                        <div class="swiper-container gallery-top">
+                            <div class="swiper-wrapper">
+                                <img src="img/boiler.png" alt="" class="swiper-slide">
+                                <img src="img/minBoiler3.jpg" alt="" class="swiper-slide">
+                                <img src="img/minBoiler2.jpg" alt="" class="swiper-slide">
+                                <img src="img/minBoiler1.jpg" alt="" class="swiper-slide">
+                            </div>
+                        </div>           
+                    </div>    
                     <div class="main-product-left-photos">
-                        <a href=""><img src="img/minBoiler3.jpg" alt=""></a>
-                        <a href=""><img src="img/minBoiler2.jpg" alt=""></a>
-                        <a href=""><img src="img/minBoiler1.jpg" alt=""></a>
-                        <div>
+                        <div class="swiper-container gallery-thumbs">
+                            <div class="swiper-wrapper">
+                                <img src="img/minBoiler.png" alt="" class="swiper-slide">
+                                <img src="img/minBoiler3.jpg" alt="" class="swiper-slide">
+                                <img src="img/minBoiler2.jpg" alt="" class="swiper-slide">
+                                <img src="img/minBoiler1.jpg" alt="" class="swiper-slide">
+                            </div>
+                        </div>       
+                        <div class="main-product-left-photos-btns">
                             <button class="main-product-left-photos_leftBtn">
                                 <span></span>
                                 <span></span>
@@ -206,7 +226,7 @@
                         <button class="optionBtn"><img src="img/button.svg" alt=""></button>
                     </div>
                     <div class="main-product-right-buyBtns">
-                        <button class="buyBtn" id="buyBtn" >Купить котел КВм-1,1 с ТШПМ</button>
+                        <button class="buyBtn" id="buyBtn" data-fancybox data-src="#modal" href="javascript:;" data-tippy-content>Купить котел КВм-1,1 с ТШПМ</button>
                         <button class="commercialBtn buyBtn"><img src="img/commercial.svg" alt="">Запросить<br> коммерческое предложение</button>
                     </div>
                     <div class="main-product-right-buyBtns">
@@ -256,9 +276,10 @@
                     </div>
                 </div>
             </section>
+            
         </div>
     </main>
-    <div class="modal">
+    <div class="modal" style="display:none" id="modal" >
         <div class="modal-content">
             <h2 class="modal_name">Модульная котельная мощностью<br> 300 кВт</h2>
             <div class="main-product-right-inStock">
@@ -302,7 +323,8 @@
                 </button>
             </div>
         </div>
-    </div>    
+    </div>
+    <script src="plugin/swiper/js/swiper.min.js"></script>  
     <script>
         let accBtn = document.getElementsByClassName('main-product-left-productSelection_btn');
         let target = document.getElementsByClassName('main-product-left-productSelection');
@@ -333,16 +355,7 @@
                 arrow[1].style.transform = "rotate(45deg)";
             }  
         })
-        let modalBtn = document.getElementById('buyBtn');
-        let modal = document.getElementsByClassName("modal");
-        modalBtn.addEventListener("click", function() { 
-            modal[0].style.display = "block";
-        })
-        window.onclick = function(event) {
-            if (event.target == modal[0]) {
-                modal[0].style.display = "none";
-            }
-        }
+        
         let count = 0;
         function btnClickPlus(){
             count++;
@@ -360,5 +373,49 @@
         
     </script>
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+        tippy('[data-tippy-content]', {
+            content: "Нажмите, чтобы купить в 1 клик",
+            duration: 0
+        })
+    </script>
+    <script>
+        let btn = document.getElementById('buyBtn');
+        
+        btn.addEventListener('click', function(){
+            new Noty({
+                text: 'Товар куплен',
+                type: 'success',
+                theme: 'sunset',
+                timeout: 2000
+                }).show();
+        })
+
+    </script>
+    <script>
+        let galleryThumbs = new Swiper('.gallery-thumbs', {
+            initialSlide: 3,
+            slidesPerView: 3,
+            spaceBetween: 10,
+            freeMode: true,
+            watchSlidesVisibility: false,
+            watchSlidesProgress: true,
+            
+            
+        });
+        let galleryTop = new Swiper('.gallery-top', {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.main-product-left-photos_leftBtn',
+                prevEl: '.main-product-left-photos_rightBtn',
+            },
+            thumbs: {
+                swiper: galleryThumbs
+            }
+        });
+        
+    </script>
 </body>
 </html>
